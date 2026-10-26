@@ -8,6 +8,7 @@ val releaseKeystorePath: String? = System.getenv("SHIGUANG_KEYSTORE_PATH")
 android {
     namespace = "com.zmoee.shiguang"
     compileSdk = 37
+    compileSdkMinor = 0
 
     defaultConfig {
         applicationId = "com.zmoee.shiguang"
