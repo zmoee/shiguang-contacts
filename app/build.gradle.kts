@@ -1,6 +1,5 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
@@ -8,12 +7,12 @@ val releaseKeystorePath: String? = System.getenv("SHIGUANG_KEYSTORE_PATH")
 
 android {
     namespace = "com.zmoee.shiguang"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.zmoee.shiguang"
         minSdk = 26
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0.0"
 
@@ -57,15 +56,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-        freeCompilerArgs += listOf(
-            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
-            "-opt-in=androidx.compose.material3.ExperimentalMaterial3ExpressiveApi",
-            "-opt-in=androidx.compose.foundation.layout.ExperimentalLayoutApi",
-        )
-    }
-
     buildFeatures {
         compose = true
         buildConfig = false
@@ -77,6 +67,17 @@ android {
             excludes += "META-INF/LICENSE*"
             excludes += "META-INF/NOTICE*"
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+        freeCompilerArgs.addAll(
+            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+            "-opt-in=androidx.compose.material3.ExperimentalMaterial3ExpressiveApi",
+            "-opt-in=androidx.compose.foundation.layout.ExperimentalLayoutApi",
+        )
     }
 }
 

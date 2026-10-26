@@ -17,7 +17,7 @@ Android 原生应用，使用 **Kotlin + Jetpack Compose + Material 3 Expressive
 
 ## 构建
 
-项目包含 Gradle Wrapper 8.13，要求 JDK 17+、Android SDK 36。
+项目包含 Gradle Wrapper 9.3.1、AGP 9.1.1，要求 JDK 17+、Android SDK 37。
 
 ```bash
 ./gradlew :app:assembleRelease
