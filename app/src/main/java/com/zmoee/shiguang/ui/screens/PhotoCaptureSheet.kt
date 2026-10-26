@@ -10,7 +10,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
-import androidx.camera.core.OutputFileOptions
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
@@ -146,7 +145,7 @@ fun PhotoCaptureSheet(
         inlineMessage = null
         val photoDirectory = File(context.filesDir, "photos").apply { mkdirs() }
         val photoFile = File(photoDirectory, "contact_${contact.id}_${System.currentTimeMillis()}.jpg")
-        val outputOptions = OutputFileOptions.Builder(photoFile).build()
+        val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
         val executor: Executor = ContextCompat.getMainExecutor(context)
         capture.takePicture(
             outputOptions,
