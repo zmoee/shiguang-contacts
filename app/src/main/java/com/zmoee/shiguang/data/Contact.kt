@@ -1,5 +1,8 @@
 package com.zmoee.shiguang.data
 
+import java.text.Collator
+import java.util.Locale
+
 /**
  * A locally stored person in the contact journal.
  *
@@ -58,5 +61,12 @@ fun List<Contact>.filteredBy(query: String): List<Contact> {
 fun List<Contact>.sortedFor(order: SortOrder): List<Contact> =
     when (order) {
         SortOrder.RECENT -> sortedByDescending { it.updatedAt }
-        SortOrder.NAME -> sortedWith(compareBy(String.CASE_INSENSITIVE_ORDER) { it.name })
+        SortOrder.NAME -> {
+            val collator = Collator.getInstance(Locale.CHINA)
+            sortedWith(
+                Comparator { first, second ->
+                    collator.compare(first.name, second.name)
+                },
+            )
+        }
     }

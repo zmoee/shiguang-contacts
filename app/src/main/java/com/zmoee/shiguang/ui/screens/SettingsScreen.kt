@@ -85,7 +85,7 @@ fun SettingsScreen(
                 title = order.label,
                 subtitle = when (order) {
                     SortOrder.RECENT -> "最近添加或修改的人排在前面"
-                    SortOrder.NAME -> "按姓名拼音顺序排列"
+                    SortOrder.NAME -> "按姓名顺序排列"
                 },
                 leading = Sym.Sort,
                 shape = connectedItemShape(index, SortOrder.entries.size),
