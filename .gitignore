@@ -16,3 +16,7 @@ keystore.properties
 release/
 *.apk
 !docs/*.apk
+build-artifact/
+build-artifact-final/
+artifacts/
+*.apk.sha256

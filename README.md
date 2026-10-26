@@ -4,6 +4,8 @@
 
 Android 原生应用，使用 **Kotlin + Jetpack Compose + Material 3 Expressive**。目标竖屏手机 `412 × 892dp`，只提供浅色 Purple 主题。
 
+[**下载已签名 APK**](https://github.com/zmoee/shiguang-contacts/releases/latest) · [查看源码](https://github.com/zmoee/shiguang-contacts)
+
 ## 功能
 
 - **联系人**：新建、查看、编辑、删除、收藏，输入校验与删除确认。
